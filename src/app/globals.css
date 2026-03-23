@@ -109,18 +109,63 @@ html {
 
 .phone-mockup {
   position: relative;
-  border-radius: 40px;
+  isolation: isolate;
+  border-radius: 46px;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.12),
-    0 8px 24px rgba(0, 0, 0, 0.08),
-    inset 0 0 0 3px #2a2a2a;
-  background: #1a1a1a;
-  padding: 8px;
+    0 28px 70px rgba(16, 20, 24, 0.18),
+    0 10px 24px rgba(16, 20, 24, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(24, 24, 28, 0.9);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.55), transparent 26%),
+    linear-gradient(135deg, #8e8f97 0%, #3d3d43 16%, #17171b 34%, #09090b 50%, #232329 70%, #74757d 100%);
+  padding: 9px;
+}
+
+.phone-mockup::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  z-index: 3;
+  width: 36%;
+  height: 28px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 45%, rgba(255, 255, 255, 0.2), transparent 20%),
+    linear-gradient(180deg, #111214 0%, #050506 100%);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.08),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.65),
+    0 1px 0 rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.phone-mockup::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: 2;
+  border-radius: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.phone-screen {
+  position: relative;
+  z-index: 1;
+  border-radius: 36px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    inset 0 0 0 1.5px rgba(0, 0, 0, 0.55);
 }
 
 .phone-mockup img {
-  border-radius: 32px;
+  border-radius: 36px;
   width: 100%;
   height: auto;
   display: block;
