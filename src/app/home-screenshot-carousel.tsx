@@ -133,19 +133,20 @@ export default function HomeScreenshotCarousel() {
       >
         <div className="phone-screen overflow-hidden rounded-[32px] bg-surface">
           <div
-            className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+            className="absolute inset-0 flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{ transform: `translateX(-${activeIndex * 100}%)` }}
           >
             {SCREENSHOTS.map((screenshot, index) => (
-              <div key={screenshot.src} className="min-w-full">
+              <div key={screenshot.src} className="relative h-full min-w-full">
                 <Image
                   src={screenshot.src}
                   alt={screenshot.alt}
-                  width={1206}
-                  height={2622}
-                  priority={index === 0}
+                  fill
+                  preload={index === 0}
+                  loading="eager"
+                  fetchPriority={index === 0 ? "high" : "auto"}
                   sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 320px"
-                  className="pointer-events-none block h-auto w-full"
+                  className="pointer-events-none block object-cover"
                   draggable={false}
                 />
               </div>
