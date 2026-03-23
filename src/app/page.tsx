@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HomeScreenshotCarousel from "./home-screenshot-carousel";
 
 function Nav() {
   return (
@@ -92,10 +93,8 @@ function Hero() {
           </div>
 
           <div className="flex-1 flex justify-center relative">
-            <div className="relative animate-float w-[240px] sm:w-[280px] lg:w-auto">
-              <div className="phone-mockup">
-                <Image src="/screenshots/before-you-buy.png" alt="Money2Time - Before You Buy feature" width={320} height={693} className="w-full h-auto" />
-              </div>
+            <div className="relative animate-float w-[220px] sm:w-[250px] md:w-[280px] lg:w-[320px]">
+              <HomeScreenshotCarousel />
             </div>
           </div>
         </div>
