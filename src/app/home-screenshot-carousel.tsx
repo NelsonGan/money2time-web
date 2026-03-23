@@ -132,12 +132,17 @@ export default function HomeScreenshotCarousel() {
         aria-label="App screenshots carousel"
       >
         <div className="phone-screen overflow-hidden rounded-[32px] bg-surface">
-          <div
-            className="absolute inset-0 flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-          >
-            {SCREENSHOTS.map((screenshot, index) => (
-              <div key={screenshot.src} className="relative h-full min-w-full">
+          {SCREENSHOTS.map((screenshot, index) => {
+            const isActive = index === activeIndex;
+
+            return (
+              <div
+                key={screenshot.src}
+                className={`absolute inset-0 transition-opacity duration-300 ${
+                  isActive ? "opacity-100" : "opacity-0"
+                }`}
+                aria-hidden={!isActive}
+              >
                 <Image
                   src={screenshot.src}
                   alt={screenshot.alt}
@@ -150,8 +155,8 @@ export default function HomeScreenshotCarousel() {
                   draggable={false}
                 />
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
 
