@@ -20,7 +20,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="relative min-h-[100svh] flex items-center pt-16 pb-4 overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-start sm:items-center pt-24 sm:pt-20 lg:pt-16 pb-4 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 relative w-full">
         <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-16">
           <div className="flex-1 text-center lg:text-left">
