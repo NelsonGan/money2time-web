@@ -1,17 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-1.5">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center">
+        <Link href="/" className="flex items-center gap-1.5">
           <Image src="/icon.png" alt="Money2Time" width={36} height={36} className="rounded-lg" />
           <span className="font-black text-lg tracking-[-0.9px] flex items-baseline">
             <span style={{ color: "#F37D57" }}>Money</span>
             <sub className="text-[11px] font-black ml-[1px]" style={{ color: "#F6B750" }}>2</sub>
             <span className="ml-[-1px]" style={{ color: "#B65F48" }}>Time</span>
           </span>
-        </div>
+        </Link>
       </div>
     </nav>
   );
@@ -162,47 +163,6 @@ function WhyIBuiltThis() {
   );
 }
 
-function CTA() {
-  return (
-    <section id="download" className="py-12 sm:py-20 relative overflow-hidden">
-      <div className="max-w-3xl mx-auto px-6 relative">
-        <div className="bg-card rounded-[32px] border border-border/60 p-8 sm:p-16 text-center relative overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-60 h-60 bg-primary/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-accent/10 rounded-full blur-3xl" />
-
-          <div className="relative">
-            <Image src="/icon.png" alt="Money2Time" width={72} height={72} className="rounded-2xl mx-auto mb-6 glow-primary" />
-
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
-              Start valuing your{" "}
-              <span className="text-primary">time</span>
-            </h2>
-
-            <p className="text-foreground-soft text-base sm:text-lg max-w-md mx-auto mb-8">
-              Download Money₂Time and transform the way you think about every
-              dollar you spend.
-            </p>
-
-            <a
-              href="https://apps.apple.com"
-              className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-foreground text-surface rounded-2xl text-base font-bold hover:bg-foreground/90 transition-all hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor">
-                <path d="M16.52 12.76c-.03-3.12 2.55-4.62 2.67-4.7-1.45-2.12-3.72-2.41-4.53-2.45-1.93-.2-3.76 1.14-4.74 1.14-.98 0-2.49-1.11-4.1-1.08-2.11.03-4.05 1.23-5.14 3.12-2.19 3.8-.56 9.43 1.57 12.52 1.04 1.5 2.29 3.2 3.92 3.14 1.57-.06 2.17-1.02 4.07-1.02 1.9 0 2.44 1.02 4.1.99 1.69-.03 2.77-1.53 3.8-3.04 1.2-1.74 1.69-3.43 1.72-3.51-.04-.02-3.3-1.27-3.34-5.01zM13.47 3.53C14.33 2.47 14.93.99 14.77 0c-1.24.05-2.75.82-3.64 1.87-.8.93-1.5 2.41-1.31 3.83 1.38.11 2.79-.7 3.65-2.17z" />
-              </svg>
-              Download for iOS
-            </a>
-
-            <p className="mt-4 text-foreground-muted text-sm">
-              Free to download. Available on the App Store.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Footer() {
   return (
     <footer className="py-10 border-t border-border/60">
@@ -217,18 +177,18 @@ function Footer() {
             </span>
           </div>
           <div className="flex items-center gap-6 text-sm text-foreground-muted">
-            <a
-              href="mailto:nelson.ganlw@gmail.com"
+            <Link
+              href="/contact"
               className="hover:text-primary transition-colors"
             >
-              Support
-            </a>
-            <a
+              Contact
+            </Link>
+            <Link
               href="/privacy"
               className="hover:text-primary transition-colors"
             >
               Privacy Policy
-            </a>
+            </Link>
           </div>
           <p className="text-foreground-muted text-sm">
             &copy; {new Date().getFullYear()} Money₂Time. All rights reserved.

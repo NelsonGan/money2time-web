@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { CONTACT_EMAIL } from "@/lib/contact";
+
 export const metadata: Metadata = {
   title: "Privacy Policy - Money₂Time",
   description: "Privacy Policy for the Money₂Time iOS app.",
@@ -11,7 +13,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center">
           <Link href="/" className="flex items-center gap-1.5">
             <Image src="/icon.png" alt="Money2Time" width={36} height={36} className="rounded-lg" />
             <span className="font-black text-lg tracking-[-0.9px] flex items-baseline">
@@ -19,12 +21,6 @@ export default function PrivacyPolicy() {
               <sub className="text-[11px] font-black ml-[1px]" style={{ color: "#F6B750" }}>2</sub>
               <span className="ml-[-1px]" style={{ color: "#B65F48" }}>Time</span>
             </span>
-          </Link>
-          <Link
-            href="/"
-            className="text-sm font-medium text-foreground-soft hover:text-primary transition-colors"
-          >
-            Back to Home
           </Link>
         </div>
       </nav>
@@ -262,9 +258,16 @@ export default function PrivacyPolicy() {
               request deletion of analytics data, please contact us at:
             </p>
             <p>
-              <a href="mailto:nelson.ganlw@gmail.com" className="text-primary font-semibold hover:underline">
-                nelson.ganlw@gmail.com
+              <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary font-semibold hover:underline">
+                {CONTACT_EMAIL}
               </a>
+            </p>
+            <p>
+              You can also use the{" "}
+              <Link href="/contact" className="text-primary font-semibold hover:underline">
+                contact form
+              </Link>
+              {" "}on this site.
             </p>
           </Section>
         </div>
@@ -282,12 +285,12 @@ export default function PrivacyPolicy() {
               </span>
             </Link>
             <div className="flex items-center gap-6 text-sm text-foreground-muted">
-              <a
-                href="mailto:nelson.ganlw@gmail.com"
+              <Link
+                href="/contact"
                 className="hover:text-primary transition-colors"
               >
-                Support
-              </a>
+                Contact
+              </Link>
               <Link
                 href="/privacy"
                 className="hover:text-primary transition-colors"
