@@ -155,11 +155,6 @@ function WhyIBuiltThis() {
           <p className="text-foreground font-medium">
             Hopefully you&apos;ll always have control of your money and your life.
           </p>
-          <div className="pt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-foreground-muted">
-            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-primary transition-colors">Terms of Use</Link>
-            <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
-          </div>
         </div>
         </div>
       </div>
