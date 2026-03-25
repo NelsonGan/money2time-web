@@ -297,6 +297,12 @@ export default function PrivacyPolicy() {
               >
                 Privacy Policy
               </Link>
+              <Link
+                href="/terms"
+                className="hover:text-primary transition-colors"
+              >
+                Terms of Use
+              </Link>
             </div>
             <p className="text-foreground-muted text-sm">
               &copy; {new Date().getFullYear()} Money₂Time. All rights reserved.
