@@ -1,6 +1,6 @@
 # Money₂Time Web
 
-Product landing page and privacy policy for the [Money₂Time](https://apps.apple.com) iOS app — a personal finance app that converts spending into hours of your life.
+Product landing page and privacy policy for the [Money₂Time](https://apps.apple.com/my/app/money2time/id6760418898) iOS app — a personal finance app that converts spending into hours of your life.
 
 ## Tech Stack
 

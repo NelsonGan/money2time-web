@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HomeScreenshotCarousel from "./home-screenshot-carousel";
+import { APP_STORE_URL } from "@/lib/app-links";
 
 function Nav() {
   return (
@@ -63,7 +64,7 @@ function Hero() {
 
             <div className="mt-5 sm:mt-8 mb-4 sm:mb-0 flex flex-row gap-3 justify-center lg:justify-start animate-fade-in-up [animation-delay:0.35s]">
               <a
-                href="https://apps.apple.com"
+                href={APP_STORE_URL}
                 className="inline-flex items-center gap-2.5 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-foreground text-surface rounded-xl sm:rounded-2xl font-bold hover:bg-foreground/90 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <svg className="w-5 h-5 sm:w-[22px] sm:h-[22px]" viewBox="0 0 22 26" fill="currentColor">
