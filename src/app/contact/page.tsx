@@ -53,9 +53,18 @@ export default function ContactPage() {
         <div className="mx-auto max-w-3xl px-6">
           <section className="space-y-6">
             <div className="space-y-4">
-              <h1 className="max-w-xl text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl">
-                Contact Me
-              </h1>
+              <div className="flex items-center gap-4 sm:gap-5">
+                <Image
+                  src="/mascots/announce.png"
+                  alt=""
+                  width={200}
+                  height={200}
+                  className="w-16 h-16 sm:w-24 sm:h-24 animate-wiggle"
+                />
+                <h1 className="max-w-xl text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl">
+                  Contact Me
+                </h1>
+              </div>
 
               <p className="max-w-2xl text-base leading-7 text-foreground-soft sm:text-lg">
                 For support, bugs, feedback, or privacy questions.
