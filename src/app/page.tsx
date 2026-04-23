@@ -96,8 +96,77 @@ function Hero() {
           <div className="flex-1 flex justify-center relative">
             <div className="relative animate-float w-[220px] sm:w-[250px] md:w-[280px] lg:w-[320px]">
               <HomeScreenshotCarousel />
+              <div className="pointer-events-none hidden sm:block absolute -bottom-2 -left-8 lg:-bottom-4 lg:-left-14 w-16 lg:w-20 animate-float-delayed z-10">
+                <Image
+                  src="/mascots/rich.png"
+                  alt=""
+                  width={200}
+                  height={200}
+                  className="w-full h-auto drop-shadow-[0_6px_12px_rgba(246,183,80,0.25)]"
+                />
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Features() {
+  const items = [
+    {
+      mascot: "announce",
+      title: "Check Before You Buy",
+      body: "See the true hourly cost of a purchase before you commit. Build the pause that protects your time.",
+    },
+    {
+      mascot: "working",
+      title: "Know Your Real Hourly Rate",
+      body: "Factor in commute, unpaid overtime, and work expenses to find what your time is actually worth.",
+    },
+    {
+      mascot: "rich",
+      title: "Watch Your Savings Grow",
+      body: "Track savings rate, accounts, and recurring expenses. Every dollar saved is life energy reclaimed.",
+    },
+  ] as const;
+
+  return (
+    <section className="relative py-16 sm:py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-10 sm:mb-14">
+          <span className="inline-block px-4 py-1.5 bg-accent-soft text-foreground text-sm font-bold rounded-full mb-4">
+            What you&apos;ll do
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
+            A friendlier way to <span className="text-primary">spend less</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+          {items.map((item) => (
+            <div
+              key={item.mascot}
+              className="group relative bg-card rounded-[22px] border border-border/60 p-6 sm:p-7 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(26,46,42,0.08)]"
+            >
+              <div className="mx-auto mb-4 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28">
+                <Image
+                  src={`/mascots/${item.mascot}.png`}
+                  alt=""
+                  width={220}
+                  height={220}
+                  className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3"
+                />
+              </div>
+              <h3 className="text-lg sm:text-xl font-extrabold tracking-tight mb-2">
+                {item.title}
+              </h3>
+              <p className="text-sm sm:text-[15px] text-foreground-soft leading-relaxed">
+                {item.body}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -115,9 +184,20 @@ function WhyIBuiltThis() {
           <span className="inline-block px-4 py-1.5 bg-primary-soft text-primary text-sm font-bold rounded-full mb-4">
             From the Developer
           </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-            Why I Built This
-          </h2>
+          <div className="flex items-center justify-center gap-3 sm:gap-4">
+            <div className="w-12 sm:w-16 animate-wiggle">
+              <Image
+                src="/mascots/love.png"
+                alt=""
+                width={200}
+                height={200}
+                className="w-full h-auto"
+              />
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
+              Why I Built This
+            </h2>
+          </div>
         </div>
 
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14">
@@ -211,6 +291,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Features />
         <WhyIBuiltThis />
       </main>
       <Footer />
